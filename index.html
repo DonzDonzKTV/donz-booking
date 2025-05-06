@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DONZ 包廂預約狀況總覽</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+    header {
+      text-align: center;
+      background: linear-gradient(to right, #f5e6f0, #fdebd3);
+      padding: 1em;
+    }
+    header img {
+      max-height: 80px;
+    }
+    h1 {
+      font-size: 1.8em;
+      margin: 0.5em 0 0;
+    }
+    p.description {
+      color: #666;
+      font-size: 0.9em;
+      margin-top: 0.2em;
+    }
+    main {
+      padding: 1em;
+      text-align: center;
+    }
+    .calendar-wrapper iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      margin-top: 1em;
+    }
+    .selector {
+      margin: 1em 0;
+      font-size: 1em;
+    }
+    .rooms {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      margin-top: 2em;
+    }
+    .room-card {
+      border-radius: 10px;
+      padding: 1em;
+      color: white;
+      min-width: 200px;
+      flex: 1 0 200px;
+    }
+    .A { background: #d29ec8; }
+    .B { background: #f5b88f; }
+    .C { background: #f5c19d; }
+    .D { background: #e69393; }
+    .E { background: #f5d95b; color: #333; }
+    .F { background: #cda8f3; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DONZ 包廂預約狀況總覽</h1>
+    <p class="description">目前僅開放 21 天內的預約</p>
+  </header>
+  <main>
+    <label class="selector">
+      查看單一包廂預約狀況：
+      <select onchange="changeCalendar(this.value)">
+        <option value="all">整合總表</option>
+        <option value="A">A 包廂</option>
+        <option value="B">B 包廂</option>
+        <option value="C">C 包廂</option>
+        <option value="D">D 包廂</option>
+        <option value="E">E 包廂</option>
+        <option value="F">F 包廂</option>
+      </select>
+    </label>
+
+    <div class="calendar-wrapper">
+      <iframe id="calendar" src="https://calendar.google.com/calendar/embed?src=c_9a66b6765eda14a2388e7a936783aa44f94ffbb2a997a6fb984fc29c2f5f0074%40group.calendar.google.com&ctz=Asia%2FTaipei"></iframe>
+    </div>
+
+    <div class="rooms">
+      <div class="room-card A">(A) 超大包廂｜4~25人｜Joysound Max2</div>
+      <div class="room-card B">(B) 大包廂｜3~15人｜Joysound Max</div>
+      <div class="room-card C">(C) 大包廂｜3~15人｜Joysound Max</div>
+      <div class="room-card D">(D) 中包廂｜1~10人｜DAM XG7000</div>
+      <div class="room-card E">(E) 中包廂｜1~10人｜Joysound Max</div>
+      <div class="room-card F">(F) 中包廂｜1~10人｜Joysound Max</div>
+    </div>
+  </main>
+
+  <script>
+    const calendarUrls = {
+      all: "https://calendar.google.com/calendar/embed?src=c_9a66b6765eda14a2388e7a936783aa44f94ffbb2a997a6fb984fc29c2f5f0074%40group.calendar.google.com&ctz=Asia%2FTaipei",
+      A: "https://calendar.google.com/calendar/embed?src=c_38481422a7c083ee085599e6bbd94ca648c52bc6184a38685a2e8ed27dd6dca7%40group.calendar.google.com&ctz=Asia%2FTaipei",
+      B: "https://calendar.google.com/calendar/embed?src=c_24c355571e7e5266d6bae8da300e64b6927e35bedaff4d648aaba7b4ccc74770%40group.calendar.google.com&ctz=Asia%2FTaipei",
+      C: "https://calendar.google.com/calendar/embed?src=c_76f412a15970d1a65110885076e43ba9ff2abb24a161d1f0be1e3577c8f54849%40group.calendar.google.com&ctz=Asia%2FTaipei",
+      D: "https://calendar.google.com/calendar/embed?src=c_2e9787c93b7739e2911368660927c67534b4884df3ed5173b1751d7b21b19ad0%40group.calendar.google.com&ctz=Asia%2FTaipei",
+      E: "https://calendar.google.com/calendar/embed?src=c_f63b41adc5620d2cfb23cd52fbeba02d3b2966a19bb876fc34b0cf6b84f6fbee%40group.calendar.google.com&ctz=Asia%2FTaipei",
+      F: "https://calendar.google.com/calendar/embed?src=c_c81e01eb17e622dee275838f11d0d0490e631565cffbd56b19bc4977a125b5fb%40group.calendar.google.com&ctz=Asia%2FTaipei"
+    };
+
+    function changeCalendar(value) {
+      document.getElementById("calendar").src = calendarUrls[value];
+    }
+  </script>
+</body>
+</html>
