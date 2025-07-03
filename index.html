@@ -27,6 +27,11 @@
       color: #666;
       font-size: 0.9em;
       margin-top: 0.2em;
+      line-height: 1.5em;
+    }
+    p.description span {
+      color: #cc0000;
+      font-weight: 500;
     }
     main {
       padding: 1em;
@@ -62,12 +67,33 @@
     .D { background: #e69393; }
     .E { background: #f5d95b; color: #333; }
     .F { background: #cda8f3; }
+
+    .booking-link {
+      margin-top: 2em;
+      text-align: center;
+    }
+    .booking-link a {
+      display: inline-block;
+      background-color: #ec4899;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .booking-link a:hover {
+      background-color: #be185d;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>DONZ 包廂預約狀況總覽</h1>
-    <p class="description">目前僅開放 21 天內的預約</p>
+    <p class="description">
+      目前僅開放 21 天內的預約。<br>
+      <span>預約完成之後將於十分鐘內更新至此行事曆，如預約後超過十分鐘未顯示您的預約，請私訊 Donz FB 粉專確認。</span>
+    </p>
   </header>
   <main>
     <label class="selector">
@@ -94,6 +120,10 @@
       <div class="room-card D">(D) 中包廂｜1~10人｜DAM XG7000</div>
       <div class="room-card E">(E) 中包廂｜1~10人｜Joysound Max</div>
       <div class="room-card F">(F) 中包廂｜1~10人｜Joysound Max</div>
+    </div>
+
+    <div class="booking-link">
+      <a href="https://url.ohbot.cc/QGTKRG1j" target="_blank">前往 Donz 預約中心</a>
     </div>
   </main>
 
